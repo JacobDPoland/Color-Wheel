@@ -13,7 +13,8 @@ let ran = false
 let frame_counter = 0;
 function draw() {
     let shape_size = 50;
-    if (!ran && !(++frame_counter % 100)){
+    let animation_speed = 100; // high number == slower
+    if (!ran && !(++frame_counter % animation_speed)){
         background(220)
         
         spiral_offset = 0
