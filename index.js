@@ -5,18 +5,19 @@ let sym = 360 / n;
 function setup() {
     createCanvas(800,800)
     angleMode(DEGREES)
+    noStroke()
 }
 
 
 let ran = false
+let frame_counter = 0;
 function draw() {
     let shape_size = 50;
-    if (!ran){
-        setTimeout(null, 10000)
+    if (!ran && !(++frame_counter % 100)){
         background(220)
         
         spiral_offset = 0
-        for (let tier = 0; tier <= 9; tier++){        
+        for (let tier = 0; tier <= 9; tier++){                    
             for (let i = 0; i <= n; i++){
                 push()
                 translate(width/2, height/2)
@@ -48,13 +49,13 @@ function draw() {
                     circle(0, 0, shape_size)
                 }
                 catch(err) {
-                    console.error(err);
+                    console.error("Error drawing: ", err);
                 }
 
                 pop()
             }
         }
-        // ran = true
+        ran = false
     }
 
 }
