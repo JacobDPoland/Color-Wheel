@@ -10,10 +10,10 @@ function setup() {
 
 
 let ran = false
-let frame_counter = 0;
+let frame_counter = 150;
 function draw() {
     let shape_size = 50;
-    let animation_speed = 100; // high number == slower
+    let animation_speed = 200; // high number == slower
     if (!ran && !(++frame_counter % animation_speed)){
         background(220)
         
